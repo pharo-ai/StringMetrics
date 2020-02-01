@@ -1,4 +1,10 @@
 # StringMetrics
+
+[![Build Status](https://travis-ci.org/pharo-ai/StringMetrics.svg?branch=master)](https://travis-ci.org/pharo-ai/StringMetrics)
+[![Build status](https://ci.appveyor.com/api/projects/status/rvuim7w31nf8s0r9?svg=true)](https://ci.appveyor.com/project/olekscode/stringmetrics)
+[![Coverage Status](https://coveralls.io/repos/github/pharo-ai/StringMetrics/badge.svg?branch=master)](https://coveralls.io/github/pharo-ai/StringMetrics?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/pharo-ai/StringMetrics/master/LICENSE)
+
 Various metrics of string similarity implemented in [Pharo](https://pharo.org/). At the moment, the folloing metrics are supported:
 
 - [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) - minimum number of single-character edits (insertions, deletions, or substitutions) required to change one string into the other.

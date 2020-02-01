@@ -18,6 +18,19 @@ StringMetricsTest >> testLevenstineDistanceAB [
 ]
 
 { #category : #tests }
+StringMetricsTest >> testLevenstineDistanceEmptyStrings [
+	| firstString secondString expected actual |
+	
+	firstString := ''.
+	secondString := ''.
+	
+	actual := firstString levenshteinDistanceTo: secondString.
+	expected := 0.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
 StringMetricsTest >> testLevenstineDistanceHondaHondaCaseSensitive [
 	| firstString secondString expected actual |
 	
@@ -52,6 +65,19 @@ StringMetricsTest >> testLevenstineDistanceKittenSitting [
 	
 	actual := firstString levenshteinDistanceTo: secondString.
 	expected := 3.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testLevenstineDistanceOneEmpty [
+	| firstString secondString expected actual |
+	
+	firstString := 'HONDA'.
+	secondString := ''.
+	
+	actual := firstString levenshteinDistanceTo: secondString.
+	expected := 5.
 	
 	self assert: actual equals: expected.
 ]

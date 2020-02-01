@@ -32,7 +32,7 @@ String >> levenshteinDistanceTo: anotherString [
 
 { #category : #'*StringMetrics' }
 String >> recursiveLevenshteinDistanceTo: anotherString [
-	"Recursive implementation of the levenstine distance between two strings"
+	"Recursive implementation of the Levenshtein distance between two strings"
 	| cost |
 
 	self ifEmpty: [ ^ anotherString size ].

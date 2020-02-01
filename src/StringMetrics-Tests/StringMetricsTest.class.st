@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceAB [
+StringMetricsTest >> testLevenshteinDistanceAB [
 	| firstString secondString expected actual |
 	
 	firstString := 'A'.
@@ -18,7 +18,7 @@ StringMetricsTest >> testLevenstineDistanceAB [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceEmptyStrings [
+StringMetricsTest >> testLevenshteinDistanceEmptyStrings [
 	| firstString secondString expected actual |
 	
 	firstString := ''.
@@ -31,7 +31,7 @@ StringMetricsTest >> testLevenstineDistanceEmptyStrings [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceHondaHondaCaseSensitive [
+StringMetricsTest >> testLevenshteinDistanceHondaHondaCaseSensitive [
 	| firstString secondString expected actual |
 	
 	firstString := 'HONDA'.
@@ -44,7 +44,7 @@ StringMetricsTest >> testLevenstineDistanceHondaHondaCaseSensitive [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceHondaHyundai [
+StringMetricsTest >> testLevenshteinDistanceHondaHyundai [
 	| firstString secondString expected actual |
 	
 	firstString := 'HONDA'.
@@ -57,7 +57,7 @@ StringMetricsTest >> testLevenstineDistanceHondaHyundai [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceKittenSitting [
+StringMetricsTest >> testLevenshteinDistanceKittenSitting [
 	| firstString secondString expected actual |
 	
 	firstString := 'KITTEN'.
@@ -70,7 +70,7 @@ StringMetricsTest >> testLevenstineDistanceKittenSitting [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceOneEmpty [
+StringMetricsTest >> testLevenshteinDistanceOneEmpty [
 	| firstString secondString expected actual |
 	
 	firstString := 'HONDA'.
@@ -83,7 +83,7 @@ StringMetricsTest >> testLevenstineDistanceOneEmpty [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testLevenstineDistanceSittingKitten [
+StringMetricsTest >> testLevenshteinDistanceSittingKitten [
 	| firstString secondString expected actual |
 	
 	firstString := 'SITTING'.
@@ -96,7 +96,7 @@ StringMetricsTest >> testLevenstineDistanceSittingKitten [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceAB [
+StringMetricsTest >> testRecursiveLevenshteinDistanceAB [
 	| firstString secondString expected actual |
 	
 	firstString := 'A'.
@@ -109,7 +109,7 @@ StringMetricsTest >> testRecursiveLevenstineDistanceAB [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceEmptyStrings [
+StringMetricsTest >> testRecursiveLevenshteinDistanceEmptyStrings [
 	| firstString secondString expected actual |
 	
 	firstString := ''.
@@ -122,7 +122,7 @@ StringMetricsTest >> testRecursiveLevenstineDistanceEmptyStrings [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceHondaHondaCaseSensitive [
+StringMetricsTest >> testRecursiveLevenshteinDistanceHondaHondaCaseSensitive [
 	| firstString secondString expected actual |
 	
 	firstString := 'HONDA'.
@@ -135,7 +135,7 @@ StringMetricsTest >> testRecursiveLevenstineDistanceHondaHondaCaseSensitive [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceHondaHyundai [
+StringMetricsTest >> testRecursiveLevenshteinDistanceHondaHyundai [
 	| firstString secondString expected actual |
 	
 	firstString := 'HONDA'.
@@ -148,7 +148,7 @@ StringMetricsTest >> testRecursiveLevenstineDistanceHondaHyundai [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceKittenSitting [
+StringMetricsTest >> testRecursiveLevenshteinDistanceKittenSitting [
 	| firstString secondString expected actual |
 	
 	firstString := 'KITTEN'.
@@ -161,7 +161,7 @@ StringMetricsTest >> testRecursiveLevenstineDistanceKittenSitting [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceOneEmpty [
+StringMetricsTest >> testRecursiveLevenshteinDistanceOneEmpty [
 	| firstString secondString expected actual |
 	
 	firstString := 'HONDA'.
@@ -174,7 +174,7 @@ StringMetricsTest >> testRecursiveLevenstineDistanceOneEmpty [
 ]
 
 { #category : #tests }
-StringMetricsTest >> testRecursiveLevenstineDistanceSittingKitten [
+StringMetricsTest >> testRecursiveLevenshteinDistanceSittingKitten [
 	| firstString secondString expected actual |
 	
 	firstString := 'SITTING'.

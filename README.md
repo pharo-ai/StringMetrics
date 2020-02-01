@@ -31,8 +31,8 @@ If you are new to baselines and Metacello, check out the [Baselines](https://git
 Here are some examples of calculating the Levenshtein distance between two strings:
 
 ```Smalltalk
-'A' levenshteinDistanceTo: 'B'. "1"
-'HONDA' levenshteinDistanceTo: 'HYUNDAI'. "3"
-'KITTEN' levenshteinDistanceTo: 'SITTING'. "3"
-'HONDA' levenshteinDistanceTo: 'honda'. "5"
+'a' levenshteinDistanceTo: 'b'. "1"
+'honda' levenshteinDistanceTo: 'hyundai'. "3"
+'kitten' levenshteinDistanceTo: 'sitting'. "3"
+'honda' levenshteinDistanceTo: 'HONDA'. "5"
 ```

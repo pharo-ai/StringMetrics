@@ -94,3 +94,94 @@ StringMetricsTest >> testLevenstineDistanceSittingKitten [
 	
 	self assert: actual equals: expected.
 ]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceAB [
+	| firstString secondString expected actual |
+	
+	firstString := 'A'.
+	secondString := 'B'.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 1.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceEmptyStrings [
+	| firstString secondString expected actual |
+	
+	firstString := ''.
+	secondString := ''.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 0.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceHondaHondaCaseSensitive [
+	| firstString secondString expected actual |
+	
+	firstString := 'HONDA'.
+	secondString := 'honda'.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 5.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceHondaHyundai [
+	| firstString secondString expected actual |
+	
+	firstString := 'HONDA'.
+	secondString := 'HYUNDAI'.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 3.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceKittenSitting [
+	| firstString secondString expected actual |
+	
+	firstString := 'KITTEN'.
+	secondString := 'SITTING'.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 3.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceOneEmpty [
+	| firstString secondString expected actual |
+	
+	firstString := 'HONDA'.
+	secondString := ''.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 5.
+	
+	self assert: actual equals: expected.
+]
+
+{ #category : #tests }
+StringMetricsTest >> testRecursiveLevenstineDistanceSittingKitten [
+	| firstString secondString expected actual |
+	
+	firstString := 'SITTING'.
+	secondString := 'KITTEN'.
+	
+	actual := firstString recursiveLevenshteinDistanceTo: secondString.
+	expected := 3.
+	
+	self assert: actual equals: expected.
+]

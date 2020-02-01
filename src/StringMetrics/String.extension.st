@@ -2,32 +2,32 @@ Extension { #name : #String }
 
 { #category : #'*StringMetrics' }
 String >> levenshteinDistanceTo: anotherString [
+	"the Levenshtein distance between two words"
 
-	"return the Levenshtein distance between two words"
+	| distanceMatrix cost |
 
-	| stab cost |
-	"if a string is empty, answer the length of the another string"
-	self isEmpty
-		ifTrue: [ ^ anotherString size ].
-	anotherString isEmpty
-		ifTrue: [ ^ self size ].
-	stab := Array2D rows: anotherString size + 1 columns: self size + 1.
-	1 to: stab columnCount do: [ :i | stab at: 1 at: i put: i - 1 ].
-	1 to: stab rowCount do: [ :i | stab at: i at: 1 put: i - 1 ].
-	2 to: stab columnCount do: [ :i | 
-		2 to: stab rowCount do: [ :j | 
-			(self at: i - 1) = (anotherString at: j - 1)
-				ifTrue: [ cost := 0 ]
-				ifFalse: [ cost := 1 ].
-			stab
-				at: j
-				at: i
-				put:
-					({((stab at: j at: i - 1) + 1).
-					((stab at: j - 1 at: i) + 1).
-					((stab at: j - 1 at: i - 1) + cost)}
-						asSortedCollection: [ :a :b | a < b ]) first ] ].
-	^ stab at: stab rowCount at: stab columnCount
+	self ifEmpty: [ ^ anotherString size ].
+	anotherString ifEmpty: [ ^ self size ].
+		
+	distanceMatrix := Array2D rows: anotherString size + 1 columns: self size + 1.
+	
+	1 to: distanceMatrix rowCount do: [ :i | distanceMatrix at: i at: 1 put: i - 1 ].
+	1 to: distanceMatrix columnCount do: [ :j | distanceMatrix at: 1 at: j put: j - 1 ].
+	
+	2 to: distanceMatrix rowCount do: [ :i | 
+		2 to: distanceMatrix columnCount do: [ :j | 
+			cost := (self at: j - 1) = (anotherString at: i - 1)
+				ifTrue: [ 0 ]
+				ifFalse: [ 1 ].
+				
+			distanceMatrix at: i at: j put: {
+				(distanceMatrix at: i at: j - 1) + 1 .
+				(distanceMatrix at: i - 1 at: j) + 1 .
+				(distanceMatrix at: i - 1 at: j - 1) + cost
+			} min.
+	] ].
+	
+	^ distanceMatrix at: distanceMatrix rowCount at: distanceMatrix columnCount
 ]
 
 { #category : #'*StringMetrics' }
